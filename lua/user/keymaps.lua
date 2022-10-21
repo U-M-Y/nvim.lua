@@ -3,7 +3,7 @@ local term_opts = { silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
-keymap("","<Space>", "<NOP>", opts)
+keymap("", "<Space>", "<NOP>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -27,9 +27,20 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
 -- Horizontal Text Movement
-keymap("v", "<", "<gv", opts)   -- Left
-keymap("v", ">", ">gv", opts)   -- Right
+keymap("v", "<", "<gv", opts) -- Left
+keymap("v", ">", ">gv", opts) -- Right
 
 -- Vertical Text Movement
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)   -- Down
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)   -- Up
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts) -- Down
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts) -- Up
+
+-- Telescope
+keymap("n", "<leader>t",
+    "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>"
+    , opts)
+
+-- Nvimtree
+keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
+
+-- Maximizer
+keymap("n", "<leader>m", ":MaximizerToggle!<CR>", opts)

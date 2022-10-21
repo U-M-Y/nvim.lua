@@ -21,11 +21,10 @@ local options = {
     background = "dark",
     laststatus = 3,
 }
-  
+
 vim.opt.shortmess:append "c"
 
-  
+
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
-  
