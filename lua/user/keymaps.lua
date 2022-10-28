@@ -44,3 +44,6 @@ keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 
 -- Maximizer
 keymap("n", "<leader>m", ":MaximizerToggle!<CR>", opts)
+
+-- Flutter
+keymap("n", "<leader>ft", ":Telescope flutter commands <CR>", opts)
